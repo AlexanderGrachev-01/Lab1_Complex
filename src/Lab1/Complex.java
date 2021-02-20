@@ -24,14 +24,26 @@ public class Complex {
         this.odds += x.odds;
     }
 
+    public void addDoubleComplex(double x) {
+        this.whole += x;
+    }
+
     public void subComplex(Complex x) {
         this.whole -= x.whole;
         this.odds -= x.odds;
     }
 
+    public void subDoubleComplex(double x) {
+        this.whole -= x;
+    }
+
     public void multComplex(Complex x) {
         this.whole *= x.whole;
         this.odds *= x.odds;
+    }
+
+    public void multDoubleComplex(double x) {
+        this.whole *= x;
     }
 
     public void divComplex(Complex x) {
@@ -41,6 +53,15 @@ public class Complex {
         else {
             this.whole /= x.whole;
             this.odds /= x.odds;
+        }
+    }
+
+    public void divDoubleComplex(double x) {
+        if (x == 0) {
+            System.out.println("error 1");
+        }
+        else {
+            this.whole /= x;
         }
     }
 
