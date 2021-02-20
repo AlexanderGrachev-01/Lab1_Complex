@@ -1,9 +1,12 @@
+// Copyright Grachev Alexander
+
 package Lab1;
 
 public class Complex {
     private double whole;
     private double odds;
 
+    // Формула комплексного числа (a + bi)
     public Complex() {
         whole = 0;
         odds = 0;
@@ -19,6 +22,7 @@ public class Complex {
         odds = x.odds;
     }
 
+    // Сложение по формуле (a + c) + (b + d)i
     public void addComplex(Complex x) {
         this.whole += x.whole;
         this.odds += x.odds;
@@ -28,6 +32,7 @@ public class Complex {
         this.whole += x;
     }
 
+    // Вычитание по формуле (a - c) + (b - d)i
     public void subComplex(Complex x) {
         this.whole -= x.whole;
         this.odds -= x.odds;
@@ -37,22 +42,25 @@ public class Complex {
         this.whole -= x;
     }
 
+    // Умножение по формуле (ac - bd) + (ad + bc)i
     public void multComplex(Complex x) {
-        this.whole *= x.whole;
-        this.odds *= x.odds;
+        this.whole = this.whole * x.whole - this.odds * x.odds;
+        this.odds = this.whole * x.odds + x.whole * this.odds;
     }
 
     public void multDoubleComplex(double x) {
         this.whole *= x;
+        this.odds *= x;
     }
 
+    // Деление по формуле (ac + bd)/(c^2 +d^2) + (bc - ad)/(c^2 +d^2)i
     public void divComplex(Complex x) {
-        if (x.whole == 0 ||x.odds == 0) {
+        if (Math.pow(x.whole, 2) + Math.pow(x.odds, 2) == 0) {
             System.out.println("error 1");
         }
         else {
-            this.whole /= x.whole;
-            this.odds /= x.odds;
+            this.whole = (this.whole * x.whole + this.odds * x.odds) / (Math.pow(x.whole, 2) + Math.pow(x.odds, 2));
+            this.odds = (this.odds * x.whole - this.whole * x.odds) / (Math.pow(x.whole, 2) + Math.pow(x.odds, 2));
         }
     }
 
@@ -62,6 +70,7 @@ public class Complex {
         }
         else {
             this.whole /= x;
+            this.odds /= x;
         }
     }
 
