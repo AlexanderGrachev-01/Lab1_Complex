@@ -3,12 +3,17 @@
 package Lab1;
 
 public class Complex {
-    private double whole;
-    private double odds;
-
     // Формула комплексного числа (a + bi)
+    private double whole;  // a
+    private double odds;   // b
+
     public Complex() {
         whole = 0;
+        odds = 0;
+    }
+
+    public Complex(double whole) {
+        this.whole = whole;
         odds = 0;
     }
 
@@ -76,10 +81,10 @@ public class Complex {
 
     public void printComplex() {
         if (this.odds != 0){
-            System.out.println(this.whole + " + " + this.odds + "i");
+            System.out.print(this.whole + " + " + this.odds + "i");
         }
         else {
-            System.out.println(this.whole);
+            System.out.print(this.whole);
         }
     }
 }
