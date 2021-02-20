@@ -33,7 +33,7 @@ public class Complex {
         this.odds += x.odds;
     }
 
-    public void addDoubleComplex(double x) {
+    public void addComplex(double x) {
         this.whole += x;
     }
 
@@ -43,7 +43,7 @@ public class Complex {
         this.odds -= x.odds;
     }
 
-    public void subDoubleComplex(double x) {
+    public void subComplex(double x) {
         this.whole -= x;
     }
 
@@ -53,7 +53,7 @@ public class Complex {
         this.odds = this.whole * x.odds + x.whole * this.odds;
     }
 
-    public void multDoubleComplex(double x) {
+    public void multComplex(double x) {
         this.whole *= x;
         this.odds *= x;
     }
@@ -61,7 +61,7 @@ public class Complex {
     // Деление по формуле (ac + bd)/(c^2 +d^2) + (bc - ad)/(c^2 +d^2)i
     public void divComplex(Complex x) {
         if (Math.pow(x.whole, 2) + Math.pow(x.odds, 2) == 0) {
-            System.out.println("error 1");
+            System.out.println("Error 1");
         }
         else {
             this.whole = (this.whole * x.whole + this.odds * x.odds) / (Math.pow(x.whole, 2) + Math.pow(x.odds, 2));
@@ -69,9 +69,9 @@ public class Complex {
         }
     }
 
-    public void divDoubleComplex(double x) {
+    public void divComplex(double x) {
         if (x == 0) {
-            System.out.println("error 1");
+            System.out.println("Error 1");
         }
         else {
             this.whole /= x;
