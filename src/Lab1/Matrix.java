@@ -9,7 +9,7 @@ public class Matrix {
     public Matrix(int size) {
         xSize = size;
         ySize = size;
-        vals = new Complex [size][size];
+        vals = new Complex[size][size];
     }
 
     public Matrix(int xSize, int ySize) {
@@ -24,7 +24,7 @@ public class Matrix {
         vals = new Complex[ySize][xSize];
         for(int i = 0; i < ySize; i++)
             for(int j = 0; j < xSize; j++)
-                this.vals[i][j] = val;
+                this.vals[i][j] = new Complex(val);
     }
 
     public Matrix(Matrix x) {

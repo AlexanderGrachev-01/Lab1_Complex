@@ -16,7 +16,7 @@ public class Main {
         System.out.println("Matrix1");
         matrix1.print();
 
-        Matrix matrix2 = new Matrix(3, 3, new Complex(1, 1));
+        Matrix matrix2 = new Matrix(3, 3, new Complex(5, 1));
         System.out.println("Matrix2");
         matrix2.print();
 
